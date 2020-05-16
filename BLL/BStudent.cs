@@ -19,7 +19,7 @@ namespace Core._2019.BLL
     /// <returns></returns>
     public string Info()
     {
-      return _student.Info();
+      return _student.Info()+"我试着修改东西了";
     }
   }
 }
