@@ -10,32 +10,33 @@ using Core._2019.IDAL;
 
 namespace Core._2019.Controllers
 {
-  public class HomeController : Controller
-  {
-    private readonly ILogger<HomeController> _logger;
-    IStudent _student;
-
-    public HomeController(ILogger<HomeController> logger, IStudent student)
+    public class HomeController : Controller
     {
-      _logger = logger;
-      _student = student;
-    }
+        private readonly ILogger<HomeController> _logger;
+        IStudent _student;
 
-    public IActionResult Index()
-    {
-      string name=_student.Info();
-      return View();
-    }
+        public HomeController(ILogger<HomeController> logger, IStudent student)
+        {
+            _logger = logger;
+            _student = student;
+        }
 
-    public IActionResult Privacy()
-    {
-      return View();
-    }
+        public IActionResult Index()
+        {
+            string name = _student.Info();
+            var ww = "";
+            return View();
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-      return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
-  }
 }
